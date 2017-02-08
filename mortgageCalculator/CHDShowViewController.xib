@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHDShowViewController" customModule="mortgageCalculator" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sXQ-oX-9zf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">       等额本金：
+　　1、概念：将本金平均分摊到每个月内，同时付清上一还款日至本次还款之间的利息，前期支付的本金和利息较多，还款负担逐月递减。
+　　2、优势：（1）总体利息支出较低；（2）按月还款或者按季还款
+　　3、劣势：前期还款负担较重，特别是第一期还款时压力会很大。
+　　4、适用人群：收入较高人士，如企业高层、金领，海归派等</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sXQ-oX-9zf" secondAttribute="trailing" id="BUr-rh-l4n"/>
+                <constraint firstItem="sXQ-oX-9zf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dTE-ae-eNQ"/>
+                <constraint firstAttribute="bottom" secondItem="sXQ-oX-9zf" secondAttribute="bottom" id="qsV-Cv-tTf"/>
+                <constraint firstItem="sXQ-oX-9zf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="v9M-TE-r1U"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
