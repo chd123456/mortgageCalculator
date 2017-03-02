@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="375"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="374.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50E-9q-poX">
@@ -326,6 +326,8 @@
                 <outlet property="housingMoneyTextField" destination="RBx-Te-KMF" id="d6f-XL-i1x"/>
                 <outlet property="rateOfInterestButton" destination="Ktg-Wz-oKb" id="WNK-TR-WWO"/>
                 <outlet property="repaymentButton" destination="v9M-MC-Lo7" id="nM2-ms-qbK"/>
+                <outlet property="shakeLabel" destination="mBZ-pD-gWW" id="bS7-BB-2fR"/>
+                <outlet property="shakeLabel2" destination="WvW-2x-E2p" id="v3y-sG-VH8"/>
                 <outlet property="totalLending" destination="kc6-xT-qn2" id="PHW-DO-3v7"/>
             </connections>
             <point key="canvasLocation" x="34" y="219.5"/>

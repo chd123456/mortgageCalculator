@@ -11,6 +11,8 @@ import UIKit
 var infoDic = [String:Double]()
 class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
 
+    @IBOutlet weak var shakeLabel: UILabel!
+    @IBOutlet weak var shakeLabel2: UILabel!
     
     @IBAction func buttonClickForDEBX(_ sender: UIButton) {
         
@@ -62,12 +64,88 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(downPaymentVC, animated: true)
         }else
         {
-            self.housingMoneyTextField.becomeFirstResponder()
-            UIView().showMessage(message: "请先输入房款总价", animateDuration: 2)
+
+            self.animationForMoneyCell(label: self.shakeLabel)
+          
         }
         
 
     }
+    
+    
+    
+    
+    func animationForMoneyCell(label:UILabel)
+    {
+        UIView.animate(withDuration: 0.35, animations: {
+            UIView.animate(withDuration: 0.05, animations: {
+                label.transform = CGAffineTransform(translationX: 5, y: 0)
+                
+            }, completion: { (completion) in
+                
+                UIView.animate(withDuration: 0.05, animations: {
+                    label.transform = CGAffineTransform(translationX: -5, y: 0)
+                    
+                }, completion: { (completion) in
+                    UIView.animate(withDuration: 0.05, animations: {
+                        label.transform = CGAffineTransform(translationX: 10, y: 0)
+                        
+                    }, completion: { (completion) in
+                        UIView.animate(withDuration: 0.05, animations: {
+                            label.transform = CGAffineTransform(translationX: -10, y: 0)
+                            
+                        }, completion: { (completion) in
+                            UIView.animate(withDuration: 0.05, animations: {
+                                label.transform = CGAffineTransform(translationX: 5, y: 0)
+                                
+                            }, completion: { (completion) in
+                                UIView.animate(withDuration: 0.05, animations: {
+                                    label.transform = CGAffineTransform(translationX: -5, y: 0)
+                                    
+                                }, completion: { (completion) in
+                                    UIView.animate(withDuration: 0.05, animations: {
+                                        label.transform = CGAffineTransform(translationX: 0, y: 0)
+                                        
+                                    }, completion: { (completion) in
+                                        if label.isEqual(self.shakeLabel)
+                                        {
+                                        self.housingMoneyTextField.becomeFirstResponder()
+                                          UIView().showMessage(message: "请先输入房款总价", animateDuration: 2)
+                                        }else if label.isEqual(self.shakeLabel2){
+                                        UIView().showMessage(message: "亲爱的，请先输入贷款总额！", animateDuration: 2)
+                                        }
+                                    })
+                                    
+                                })
+                                
+                                
+                            })
+                            
+                            
+                        })
+                        
+                        
+                    })
+                    
+                    
+                })
+            })
+            
+        }, completion: { (completion) in
+            
+            label.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+        })
+        
+        //- (void)textFieldChanged:(id)sender
+        //{
+        //    NSLog(@"current ContentOffset is %@",NSStringFromCGPoint(_contentView.contentOffset));
+        //}
+        
+        
+    }
+
+    
     
     @IBAction func rateOfInterestAction(_ sender: UIButton) {
         
@@ -190,7 +268,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         
         if infoDic["totalLending"] == nil
         {
-            UIView().showMessage(message: "亲爱的，请先输入贷款总额！", animateDuration: 2)
+            self.animationForMoneyCell(label: self.shakeLabel2!)
             return
         }
         if infoDic["rate"] == nil
@@ -225,9 +303,6 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.hkze = s
         vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "基准利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
             
-        
-        
-        
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     
     }
@@ -235,7 +310,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
     @IBAction func averageCapitalMethod(_ sender: UIButton) {
         if infoDic["totalLending"] == nil
         {
-            UIView().showMessage(message: "亲爱的，请先输入借款总额！", animateDuration: 2)
+            self.animationForMoneyCell(label: self.shakeLabel2)
             return
         }
         if infoDic["rate"] == nil
@@ -276,6 +351,8 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.array = array
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
