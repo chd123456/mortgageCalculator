@@ -38,6 +38,8 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
     var callBack:((Int)->Void)!
     
     @IBAction func downPaymentAction(_ sender: UIButton) {
+        self.housingMoneyTextField.resignFirstResponder()
+        self.totalLending.resignFirstResponder()
         let downPaymentVC = downPaymentController(style: .grouped)
         if infoDic["housingMoney"] != nil
         {
@@ -60,7 +62,8 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(downPaymentVC, animated: true)
         }else
         {
-            UIView().showMessage(message: "请输入房款总价", animateDuration: 1)
+            self.housingMoneyTextField.becomeFirstResponder()
+            UIView().showMessage(message: "请先输入房款总价", animateDuration: 2)
         }
         
 
