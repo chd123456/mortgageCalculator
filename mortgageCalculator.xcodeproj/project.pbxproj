@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05870B70184B7E3BA1760C79 /* Pods_mortgageCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCFD308F39D0A5D00D2AA46 /* Pods_mortgageCalculator.framework */; };
 		0A327E121E4AB861009F10E0 /* CHDPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A327E111E4AB861009F10E0 /* CHDPickerView.xib */; };
 		0A327E141E4ABF88009F10E0 /* CHDPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A327E131E4ABF88009F10E0 /* CHDPickerView.swift */; };
 		0AAFF68F1E48044000A53C07 /* CHDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFF68D1E48044000A53C07 /* CHDTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		0AAFF6B71E483A0300A53C07 /* inputDownPaymentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inputDownPaymentCell.swift; sourceTree = "<group>"; };
 		0AAFF6B81E483A0300A53C07 /* inputDownPaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = inputDownPaymentCell.xib; sourceTree = "<group>"; };
 		0AAFF6BC1E4858EF00A53C07 /* CHDSelectedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDSelectedController.swift; sourceTree = "<group>"; };
+		0AB87C9D1E6965C0003879C0 /* mortgageCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mortgageCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
 		0AC0B30A1E49886700C9A61C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = mortgageCalculator/Assets.xcassets; sourceTree = "<group>"; };
 		0AC0B30E1E498E4C00C9A61C /* CHDMonthlyShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDMonthlyShowController.swift; sourceTree = "<group>"; };
 		0AC0B30F1E498E4C00C9A61C /* monthlyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = monthlyTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +78,9 @@
 		0AC544FF1E47648A0095B9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC545071E47669C0095B9FD /* CHDNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDNavigationController.swift; sourceTree = "<group>"; };
 		0AC545091E4769680095B9FD /* CHDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDViewController.swift; sourceTree = "<group>"; };
+		5529948C420D300E1E9D6C6B /* Pods-mortgageCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mortgageCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-mortgageCalculator/Pods-mortgageCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		C62F0982F10AE38D7C3544A9 /* Pods-mortgageCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mortgageCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mortgageCalculator/Pods-mortgageCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		CFCFD308F39D0A5D00D2AA46 /* Pods_mortgageCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mortgageCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05870B70184B7E3BA1760C79 /* Pods_mortgageCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +177,8 @@
 				0AC0B30A1E49886700C9A61C /* Assets.xcassets */,
 				0AC544F21E47648A0095B9FD /* mortgageCalculator */,
 				0AC544F11E47648A0095B9FD /* Products */,
+				B158AF605F9564AB5B620AE8 /* Pods */,
+				CBE4039F1FC5F9C16B828561 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +193,7 @@
 		0AC544F21E47648A0095B9FD /* mortgageCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				0AB87C9D1E6965C0003879C0 /* mortgageCalculator-Bridging-Header.h */,
 				0AC0B30C1E498E4C00C9A61C /* 月供展示_等额本金 */,
 				0AC0B30D1E498E4C00C9A61C /* 月供展示_等额本息 */,
 				0AAFF6BB1E4858B500A53C07 /* 还款年限 */,
@@ -209,6 +218,23 @@
 			path = mortgageCalculator;
 			sourceTree = "<group>";
 		};
+		B158AF605F9564AB5B620AE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C62F0982F10AE38D7C3544A9 /* Pods-mortgageCalculator.debug.xcconfig */,
+				5529948C420D300E1E9D6C6B /* Pods-mortgageCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CBE4039F1FC5F9C16B828561 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFCFD308F39D0A5D00D2AA46 /* Pods_mortgageCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AC545021E47648A0095B9FD /* Build configuration list for PBXNativeTarget "mortgageCalculator" */;
 			buildPhases = (
+				D185B88E1F68DC3BDC62F531 /* [CP] Check Pods Manifest.lock */,
 				0AC544EC1E47648A0095B9FD /* Sources */,
 				0AC544ED1E47648A0095B9FD /* Frameworks */,
 				0AC544EE1E47648A0095B9FD /* Resources */,
+				C3C961E4A3F4A5185C3BC56D /* [CP] Embed Pods Frameworks */,
+				418776FF3814964EF7C7C808 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,6 +271,7 @@
 					0AC544EF1E47648A0095B9FD = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ZVYN5368XR;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -289,6 +319,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		418776FF3814964EF7C7C808 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mortgageCalculator/Pods-mortgageCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3C961E4A3F4A5185C3BC56D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mortgageCalculator/Pods-mortgageCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D185B88E1F68DC3BDC62F531 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AC544EC1E47648A0095B9FD /* Sources */ = {
@@ -410,8 +488,10 @@
 		};
 		0AC545031E47648A0095B9FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C62F0982F10AE38D7C3544A9 /* Pods-mortgageCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
@@ -421,14 +501,18 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mortgageCalculator/mortgageCalculator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		0AC545041E47648A0095B9FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5529948C420D300E1E9D6C6B /* Pods-mortgageCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
@@ -438,6 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mortgageCalculator/mortgageCalculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

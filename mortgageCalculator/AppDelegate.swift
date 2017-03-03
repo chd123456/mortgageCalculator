@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
-        
+        Bugly.start(withAppId: "dd857680b5")
 
         return true
     }
