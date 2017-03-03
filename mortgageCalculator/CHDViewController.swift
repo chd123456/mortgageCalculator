@@ -11,9 +11,11 @@ import UIKit
 class CHDViewController: UIViewController {
     var segment:UISegmentedControl?
     var tableView:UITableView?
+    var tableViewframe:CGRect!
     let cell = Bundle.main.loadNibNamed("CHDTableViewCell", owner: self, options: nil)?[0] as! CHDTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         self.title = "房贷计算器"        
 
         let item = UIBarButtonItem(title: "关于", style: .done, target: self, action:#selector(self.about))
@@ -50,14 +52,16 @@ class CHDViewController: UIViewController {
         
         
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
-        tableView.frame = CGRect(x: 0, y: 39, width: self.view.frame.size.width, height: 366)
+        tableView.frame = CGRect(x: 0, y: 39, width: self.view.frame.size.width, height: 3660)
         self.tableView = tableView
+        self.tableViewframe = tableView.frame
+        tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
         if UIApplication.shared.statusBarOrientation == .portrait
         {
-            tableView.isScrollEnabled = false
+            tableView.isScrollEnabled = true
         }else
         {
             tableView.isScrollEnabled = true
@@ -126,5 +130,10 @@ extension CHDViewController:UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.tableView?.endEditing(true)
+    }
+    
 }
 

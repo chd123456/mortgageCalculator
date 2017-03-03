@@ -40,8 +40,6 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
     var callBack:((Int)->Void)!
     
     @IBAction func downPaymentAction(_ sender: UIButton) {
-        self.housingMoneyTextField.resignFirstResponder()
-        self.totalLending.resignFirstResponder()
         let downPaymentVC = downPaymentController(style: .grouped)
         if infoDic["housingMoney"] != nil
         {
@@ -110,8 +108,9 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
                                         if label.isEqual(self.shakeLabel)
                                         {
                                         self.housingMoneyTextField.becomeFirstResponder()
-                                          UIView().showMessage(message: "请先输入房款总价", animateDuration: 2)
+                                          UIView().showMessage(message: "选择首付比例之前,\n请先输入房款总价", animateDuration: 2)
                                         }else if label.isEqual(self.shakeLabel2){
+                                            self.totalLending.becomeFirstResponder()
                                         UIView().showMessage(message: "亲爱的，请先输入贷款总额！", animateDuration: 2)
                                         }
                                     })
@@ -301,8 +300,8 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.yjhk = b
         vc.zflx = y
         vc.hkze = s
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "基准利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
-            
+        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+        
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     
     }
@@ -347,7 +346,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.title = "等额本金"
         vc.hkze = hkze
         vc.zflx = zlx
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "基准利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
         vc.array = array
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     }
