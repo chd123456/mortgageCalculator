@@ -22,6 +22,8 @@ class CHDViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = item
         
+        let leftItem = UIBarButtonItem(title: "分享", style: .done, target: self, action: #selector(self.shareClick))
+        self.navigationItem.leftBarButtonItem = leftItem
         
     }
     
@@ -31,6 +33,32 @@ class CHDViewController: UIViewController {
         vc.title = "关于"
         self.navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    func shareClick()
+    {
+        // 1.创建分享参数
+        let shareParames = NSMutableDictionary()
+        shareParames.ssdkSetupShareParams(byText: "分享内容",
+                                          images : UIImage(named: "1.png"),
+                                          url : NSURL(string:"https://itunes.apple.com/cn/app/%E6%9C%88%E4%BE%9B%E8%AE%A1%E7%AE%97%E5%99%A8/id1203623034?mt=8") as URL!,
+                                          title : "分享标题",
+                                          type : SSDKContentType.image)
+        
+        //2.进行分享
+        ShareSDK.share(SSDKPlatformType.subTypeWechatSession, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
+            
+            switch state{
+                
+            case SSDKResponseState.success: print("分享成功")
+            case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
+            case SSDKResponseState.cancel:  print("操作取消")
+                
+            default:
+                break
+            }
+            
+        }
     }
     
     override func viewWillLayoutSubviews() {

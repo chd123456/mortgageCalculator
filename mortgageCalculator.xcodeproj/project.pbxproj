@@ -10,6 +10,15 @@
 		05870B70184B7E3BA1760C79 /* Pods_mortgageCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCFD308F39D0A5D00D2AA46 /* Pods_mortgageCalculator.framework */; };
 		0A327E121E4AB861009F10E0 /* CHDPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A327E111E4AB861009F10E0 /* CHDPickerView.xib */; };
 		0A327E141E4ABF88009F10E0 /* CHDPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A327E131E4ABF88009F10E0 /* CHDPickerView.swift */; };
+		0A455F8F1E6A805200C15634 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F8E1E6A805200C15634 /* SystemConfiguration.framework */; };
+		0A455F911E6A805900C15634 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F901E6A805900C15634 /* QuartzCore.framework */; };
+		0A455F931E6A806A00C15634 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F921E6A806A00C15634 /* CoreTelephony.framework */; };
+		0A455F951E6A807500C15634 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F941E6A807500C15634 /* libicucore.tbd */; };
+		0A455F971E6A807E00C15634 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F961E6A807E00C15634 /* libz.1.2.5.tbd */; };
+		0A455F991E6A808600C15634 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F981E6A808600C15634 /* Security.framework */; };
+		0A455F9B1E6A808E00C15634 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9A1E6A808E00C15634 /* JavaScriptCore.framework */; };
+		0A455F9D1E6A809800C15634 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9C1E6A809800C15634 /* libstdc++.tbd */; };
+		0A455F9F1E6A809F00C15634 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9E1E6A809F00C15634 /* CoreText.framework */; };
 		0AAFF68F1E48044000A53C07 /* CHDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFF68D1E48044000A53C07 /* CHDTableViewCell.swift */; };
 		0AAFF6901E48044000A53C07 /* CHDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAFF68E1E48044000A53C07 /* CHDTableViewCell.xib */; };
 		0AAFF6AC1E48396600A53C07 /* DigitalKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFF6A31E48396600A53C07 /* DigitalKeyboard.swift */; };
@@ -45,6 +54,15 @@
 /* Begin PBXFileReference section */
 		0A327E111E4AB861009F10E0 /* CHDPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHDPickerView.xib; sourceTree = "<group>"; };
 		0A327E131E4ABF88009F10E0 /* CHDPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDPickerView.swift; sourceTree = "<group>"; };
+		0A455F8E1E6A805200C15634 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0A455F901E6A805900C15634 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0A455F921E6A806A00C15634 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0A455F941E6A807500C15634 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		0A455F961E6A807E00C15634 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		0A455F981E6A808600C15634 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0A455F9A1E6A808E00C15634 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0A455F9C1E6A809800C15634 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		0A455F9E1E6A809F00C15634 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0AAFF68D1E48044000A53C07 /* CHDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDTableViewCell.swift; sourceTree = "<group>"; };
 		0AAFF68E1E48044000A53C07 /* CHDTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHDTableViewCell.xib; sourceTree = "<group>"; };
 		0AAFF6A31E48396600A53C07 /* DigitalKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalKeyboard.swift; sourceTree = "<group>"; };
@@ -88,6 +106,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A455F9F1E6A809F00C15634 /* CoreText.framework in Frameworks */,
+				0A455F9D1E6A809800C15634 /* libstdc++.tbd in Frameworks */,
+				0A455F9B1E6A808E00C15634 /* JavaScriptCore.framework in Frameworks */,
+				0A455F991E6A808600C15634 /* Security.framework in Frameworks */,
+				0A455F971E6A807E00C15634 /* libz.1.2.5.tbd in Frameworks */,
+				0A455F951E6A807500C15634 /* libicucore.tbd in Frameworks */,
+				0A455F931E6A806A00C15634 /* CoreTelephony.framework in Frameworks */,
+				0A455F911E6A805900C15634 /* QuartzCore.framework in Frameworks */,
+				0A455F8F1E6A805200C15634 /* SystemConfiguration.framework in Frameworks */,
 				05870B70184B7E3BA1760C79 /* Pods_mortgageCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +257,15 @@
 		CBE4039F1FC5F9C16B828561 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A455F9E1E6A809F00C15634 /* CoreText.framework */,
+				0A455F9C1E6A809800C15634 /* libstdc++.tbd */,
+				0A455F9A1E6A808E00C15634 /* JavaScriptCore.framework */,
+				0A455F981E6A808600C15634 /* Security.framework */,
+				0A455F961E6A807E00C15634 /* libz.1.2.5.tbd */,
+				0A455F941E6A807500C15634 /* libicucore.tbd */,
+				0A455F921E6A806A00C15634 /* CoreTelephony.framework */,
+				0A455F901E6A805900C15634 /* QuartzCore.framework */,
+				0A455F8E1E6A805200C15634 /* SystemConfiguration.framework */,
 				CFCFD308F39D0A5D00D2AA46 /* Pods_mortgageCalculator.framework */,
 			);
 			name = Frameworks;
@@ -494,6 +530,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,6 +552,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

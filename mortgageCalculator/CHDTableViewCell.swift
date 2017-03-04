@@ -49,7 +49,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
             let downPaymentMoney = Double((downPayment! as NSString).floatValue)
             let money = infoDic["housingMoney"]! - downPaymentMoney
      
-            self.totalLending.text = useRoundedFloatStrWith(string: "\(money)", precision: 4)
+            self.totalLending.text = useRoundedFloatStrWith(string: "\(money)", precision: 2)
              infoDic["totalLending"] = Double((self.totalLending.text! as NSString).floatValue)
             
             let percentage = useRoundedFloatStrWith(string: "\(downPaymentMoney / infoDic["housingMoney"]! * 100)", precision: 2) + "%" + "(" + useRoundedFloatStrWith(string: "\(downPaymentMoney)", precision: 2) + "万元)"
@@ -300,7 +300,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.yjhk = b
         vc.zflx = y
         vc.hkze = s
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "贷款利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
         
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     
@@ -346,7 +346,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         vc.title = "等额本金"
         vc.hkze = hkze
         vc.zflx = zlx
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 4))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
         vc.array = array
         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     }
@@ -407,24 +407,24 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         }
         if textField.isEqual(self.housingMoneyTextField)
         {
-            textField.text = useRoundedFloatStrWith(string: self.housingMoneyTextField.text!, precision: 4)
+            textField.text = useRoundedFloatStrWith(string: self.housingMoneyTextField.text!, precision: 2)
             infoDic["housingMoney"] = Double((self.housingMoneyTextField.text! as NSString).floatValue)
             if infoDic["downPayment"] != nil
             {
-                let downPayment = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! * (infoDic["downPayment"])!)", precision: 4)
+                let downPayment = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! * (infoDic["downPayment"])!)", precision: 2)
                 let titleString = "\(useRoundedFloatStrWith(string:"\(infoDic["downPayment"]! * 100)", precision: 2))% " + "(" + "\(downPayment)" + "万元" + ")"
                 self.downPayment.setTitle(titleString, for: .normal)
 
-                self.totalLending.text = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! - Double((downPayment as NSString).floatValue))", precision: 4)
+                self.totalLending.text = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! - Double((downPayment as NSString).floatValue))", precision: 2)
                  infoDic["totalLending"] = Double((self.totalLending.text! as NSString).floatValue)
             }else
             {
                infoDic["downPayment"] = 0.3
-                let downPayment = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! * (infoDic["downPayment"])!)", precision: 4)
+                let downPayment = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! * (infoDic["downPayment"])!)", precision: 2)
                 let titleString = "30% " + "(" + "\(downPayment)" + "万元" + ")"
                self.downPayment.setTitle(titleString, for: .normal)
                 
-                self.totalLending.text = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! - Double((downPayment as NSString).floatValue))", precision: 4)
+                self.totalLending.text = useRoundedFloatStrWith(string: "\((infoDic["housingMoney"])! - Double((downPayment as NSString).floatValue))", precision: 2)
                 infoDic["totalLending"] = Double((self.totalLending.text! as NSString).floatValue)
             }
 
@@ -432,14 +432,14 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         }else if textField.isEqual(self.totalLending)
         {
             
-            self.totalLending.text = useRoundedFloatStrWith(string: self.totalLending.text!, precision: 4)
+            self.totalLending.text = useRoundedFloatStrWith(string: self.totalLending.text!, precision: 2)
             infoDic["totalLending"] = Double((self.totalLending.text! as NSString).floatValue)
             
             if infoDic["housingMoney"] != nil
             {
                 let downPayment = infoDic["housingMoney"]! - infoDic["totalLending"]!
                 infoDic["downPayment"] = downPayment / infoDic["housingMoney"]!
-                let a = useRoundedFloatStrWith(string: "\((infoDic["downPayment"]!)*100)", precision: 2) + "%" + "(" + useRoundedFloatStrWith(string: "\(downPayment)", precision: 4) + "万元)"
+                let a = useRoundedFloatStrWith(string: "\((infoDic["downPayment"]!)*100)", precision: 2) + "%" + "(" + useRoundedFloatStrWith(string: "\(downPayment)", precision: 2) + "万元)"
                 self.downPayment.setTitle(a, for: .normal)
                 
             }

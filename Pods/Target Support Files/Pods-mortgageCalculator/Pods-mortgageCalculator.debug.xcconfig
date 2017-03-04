@@ -1,10 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Bugly"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Bugly" "${PODS_ROOT}/MOBFoundation" "${PODS_ROOT}/ShareSDK3/ShareSDK" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/Required" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/Optional" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformConnector" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/FacebookMessengerSDK" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/KaKaoSDK" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/QQSDK" "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/RenRenSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bugly"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bugly" "${PODS_ROOT}/Headers/Public/MOBFoundation" "${PODS_ROOT}/Headers/Public/ShareSDK3"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bugly"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "Bugly" -framework "Security" -framework "SystemConfiguration"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/APSocialSDK" $(inherited) "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/SinaWeiboSDK" $(inherited) "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/WeChatSDK" $(inherited) "${PODS_ROOT}/ShareSDK3/ShareSDK/Support/PlatformSDK/YiXinSDK"
+OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bugly" -isystem "${PODS_ROOT}/Headers/Public/MOBFoundation" -isystem "${PODS_ROOT}/Headers/Public/ShareSDK3"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"APOpenSdk" -l"WeChatSDK" -l"WeiboSDK" -l"YixinSDK" -l"c++" -l"icucore" -l"sqlite3" -l"stdc++" -l"z" -l"z.1.2.5" -framework "AliPayConnector" -framework "Bugly" -framework "CopyConnector" -framework "CoreTelephony" -framework "EvernoteConnector" -framework "FBSDKMessengerShareKit" -framework "FacebookConnector" -framework "GooglePlusConnector" -framework "ImageIO" -framework "InstagramConnector" -framework "InstapaperConnector" -framework "JavaScriptCore" -framework "KakaoConnector" -framework "KakaoOpenSDK" -framework "LineConnector" -framework "MOBFoundation" -framework "MOBFoundationEx" -framework "MailConnector" -framework "QQConnector" -framework "RennSDK" -framework "RenrenConnector" -framework "SMSConnector" -framework "Security" -framework "ShareSDK" -framework "ShareSDKConfigFile" -framework "ShareSDKConnector" -framework "ShareSDKExtension" -framework "ShareSDKUI" -framework "SinaWeiboConnector" -framework "SystemConfiguration" -framework "TencentOpenAPI" -framework "UIKit" -framework "WechatConnector" -framework "WhatsAppConnector" -framework "YiXinConnector"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

@@ -75,7 +75,7 @@ class downPaymentController: UITableViewController {
         }
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-       let string = useRoundedFloatStrWith(string: "\(money * array[indexPath.row] / 10.0)", precision: 4)
+       let string = useRoundedFloatStrWith(string: "\(money * array[indexPath.row] / 10.0)", precision: 2)
         cell.textLabel?.text = "\(array[indexPath.row] * 10)" + "%" + " " + "(" + string + ")万元"
         
         return cell
@@ -96,7 +96,7 @@ class downPaymentController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1
         {
-            self.oneCell.callBack(useRoundedFloatStrWith(string: "\(money * array[indexPath.row] / 10.0)", precision: 4))
+            self.oneCell.callBack(useRoundedFloatStrWith(string: "\(money * array[indexPath.row] / 10.0)", precision: 2))
             let _ = self.navigationController?.popViewController(animated: true)
         }
 
