@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Social
 class CHDViewController: UIViewController {
     var segment:UISegmentedControl?
     var tableView:UITableView?
@@ -37,28 +37,28 @@ class CHDViewController: UIViewController {
     
     func shareClick()
     {
-        // 1.创建分享参数
-        let shareParames = NSMutableDictionary()
-        shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                          images : UIImage(named: "1.png"),
-                                          url : NSURL(string:"https://itunes.apple.com/cn/app/%E6%9C%88%E4%BE%9B%E8%AE%A1%E7%AE%97%E5%99%A8/id1203623034?mt=8") as URL!,
-                                          title : "分享标题",
-                                          type : SSDKContentType.image)
-        
-        //2.进行分享
-        ShareSDK.share(SSDKPlatformType.subTypeWechatSession, parameters: shareParames) { (state : SSDKResponseState, nil, entity : SSDKContentEntity?, error :Error?) in
-            
-            switch state{
-                
-            case SSDKResponseState.success: print("分享成功")
-            case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-            case SSDKResponseState.cancel:  print("操作取消")
-                
-            default:
-                break
+        if !(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeSinaWeibo))
+        {
+            return
+        }
+        let shareVc = SLComposeViewController(forServiceType: SLServiceTypeSinaWeibo)
+        shareVc?.setInitialText("一款算房贷神器")
+        shareVc?.add(UIImage(named: "1"))
+        shareVc?.add(URL(string:"https://itunes.apple.com/us/app/yue-gong-ji-suan-qi/id1203623034?l=zh&ls=1&mt=8"))
+        shareVc?.completionHandler = { result in
+            if result == SLComposeViewControllerResult.cancelled
+            {
+            print("点击了取消")
+            }else{
+                print("点击了确定")
             }
+        
+        }
+        self.present(shareVc!, animated: true) { 
             
         }
+        
+        
     }
     
     override func viewWillLayoutSubviews() {
