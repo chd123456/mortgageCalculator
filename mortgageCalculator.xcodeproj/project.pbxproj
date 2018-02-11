@@ -306,7 +306,7 @@
 				TargetAttributes = {
 					0AC544EF1E47648A0095B9FD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZVYN5368XR;
+						DevelopmentTeam = 55U39XX9V7;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -529,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55U39XX9V7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -551,7 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55U39XX9V7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
