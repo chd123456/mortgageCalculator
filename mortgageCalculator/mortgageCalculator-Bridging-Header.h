@@ -26,3 +26,7 @@
 
 //支付宝SDK
 #import "APOpenAPI.h"
+
+//支付宝SDK
+#import "CHDShare.h"
+

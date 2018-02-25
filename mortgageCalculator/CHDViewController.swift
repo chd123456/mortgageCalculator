@@ -37,28 +37,16 @@ class CHDViewController: UIViewController {
     
     func shareClick()
     {
-        if !(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeSinaWeibo))
-        {
-            return
-        }
-        let shareVc = SLComposeViewController(forServiceType: SLServiceTypeSinaWeibo)
-        shareVc?.setInitialText("一款算房贷神器")
-        shareVc?.add(UIImage(named: "1"))
-        shareVc?.add(URL(string:"https://itunes.apple.com/us/app/yue-gong-ji-suan-qi/id1203623034?l=zh&ls=1&mt=8"))
-        shareVc?.completionHandler = { result in
-            if result == SLComposeViewControllerResult.cancelled
-            {
-            print("点击了取消")
-            }else{
-                print("点击了确定")
-            }
-        
-        }
-        self.present(shareVc!, animated: true) { 
+        CHDShare.shared(forDescript: "一款算房贷神器", imageName: "1", setUrl: "https://itunes.apple.com/us/app/算房贷神器/id1348565908?l=zh&ls=1&mt=8", isUseAirDrop: true, currentViewController: self, comletedHandle: {
+            
+        }) {
             
         }
         
-        
+        if !(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeSinaWeibo))
+        {
+            return
+        }        
     }
     
     override func viewWillLayoutSubviews() {

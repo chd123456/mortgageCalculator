@@ -19,6 +19,7 @@
 		0A455F9B1E6A808E00C15634 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9A1E6A808E00C15634 /* JavaScriptCore.framework */; };
 		0A455F9D1E6A809800C15634 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9C1E6A809800C15634 /* libstdc++.tbd */; };
 		0A455F9F1E6A809F00C15634 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A455F9E1E6A809F00C15634 /* CoreText.framework */; };
+		0A5295F52033D13300C9999F /* CHDShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5295F32033D13300C9999F /* CHDShare.m */; };
 		0AAFF68F1E48044000A53C07 /* CHDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFF68D1E48044000A53C07 /* CHDTableViewCell.swift */; };
 		0AAFF6901E48044000A53C07 /* CHDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAFF68E1E48044000A53C07 /* CHDTableViewCell.xib */; };
 		0AAFF6AC1E48396600A53C07 /* DigitalKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFF6A31E48396600A53C07 /* DigitalKeyboard.swift */; };
@@ -63,6 +64,8 @@
 		0A455F9A1E6A808E00C15634 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0A455F9C1E6A809800C15634 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0A455F9E1E6A809F00C15634 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0A5295F32033D13300C9999F /* CHDShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDShare.m; sourceTree = "<group>"; };
+		0A5295F42033D13300C9999F /* CHDShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDShare.h; sourceTree = "<group>"; };
 		0AAFF68D1E48044000A53C07 /* CHDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDTableViewCell.swift; sourceTree = "<group>"; };
 		0AAFF68E1E48044000A53C07 /* CHDTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHDTableViewCell.xib; sourceTree = "<group>"; };
 		0AAFF6A31E48396600A53C07 /* DigitalKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalKeyboard.swift; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				0AC0B31F1E49A2C300C9A61C /* CHDSHow1ViewController.xib */,
 				0AC0B31A1E49A1D100C9A61C /* CHDShowViewController.swift */,
 				0AC0B31B1E49A1D100C9A61C /* CHDShowViewController.xib */,
+				0A5295F42033D13300C9999F /* CHDShare.h */,
+				0A5295F32033D13300C9999F /* CHDShare.m */,
 			);
 			path = mortgageCalculator;
 			sourceTree = "<group>";
@@ -306,9 +311,9 @@
 				TargetAttributes = {
 					0AC544EF1E47648A0095B9FD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 55U39XX9V7;
+						DevelopmentTeam = 8CKTA38Z9K;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -410,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC0B3151E49938300C9A61C /* CHDMonthlyController.swift in Sources */,
+				0A5295F52033D13300C9999F /* CHDShare.m in Sources */,
 				0AC545081E47669C0095B9FD /* CHDNavigationController.swift in Sources */,
 				0AC5450A1E4769680095B9FD /* CHDViewController.swift in Sources */,
 				0AC0B3201E49A2C300C9A61C /* CHDSHow1ViewController.swift in Sources */,
@@ -529,15 +535,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 55U39XX9V7;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8CKTA38Z9K;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hida.fangdaicalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hida.fdjsq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f85619d9-cdfc-4255-9036-0a042e83cb2a";
+				PROVISIONING_PROFILE_SPECIFIER = dev_fangDaiJiSuanQi;
 				SWIFT_OBJC_BRIDGING_HEADER = "mortgageCalculator/mortgageCalculator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -550,16 +557,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 55U39XX9V7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8CKTA38Z9K;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mortgageCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hida.fangdaicalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hida.fdjsq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "56f22a52-5f34-43f0-a9ee-2f499015a27e";
+				PROVISIONING_PROFILE_SPECIFIER = Dis_fangDaiJiSuanQi;
 				SWIFT_OBJC_BRIDGING_HEADER = "mortgageCalculator/mortgageCalculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
