@@ -11,14 +11,14 @@ private let marginvalue = CGFloat(0.5)
 private let screenWith = UIScreen.main.bounds.size.width
 private let defaultDoneColor = UIColor(red: 28/255, green: 171/255, blue: 235/255, alpha: 1)
 
-public enum Style {
+public enum Style1 {
     case idcard
     case number
 }
 
 open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
     open static let `default` = DigitalKeyboard(frame: CGRect(x:0, y:0, width: screenWith, height: 224), inputViewStyle: .keyboard)
-    open var style = Style.idcard {
+    open var style = Style1.idcard {
         didSet {
             setDigitButton(style: style)
         }
@@ -38,7 +38,7 @@ open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
         }
     }
     
-    open func customDoneButton(title: String, titleColor: UIColor = UIColor.white, theme: UIColor = defaultDoneColor, target: UIViewController? = nil,  callback: Selector? = nil) {
+    open func customDoneButton(title: String, titleColor: UIColor = UIColor.white, theme: UIColor = UIColor.white, target: UIViewController? = nil,  callback: Selector? = nil) {
         setDoneButton(title: title, titleColor: titleColor, theme: theme, target: target, callback: callback)
     }
 
@@ -132,7 +132,7 @@ open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
         }
     }
     
-    func tap(sender: UIButton) {
+    @objc func tap(sender: UIButton) {
         guard let text = sender.currentTitle else {
             fatalError("not found the sender's currentTitle")
         }
@@ -186,7 +186,7 @@ open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
         }
     }
     
-    func setDigitButton(style: Style) {
+    func setDigitButton(style: Style1) {
         guard let button = findButton(by: 11) else {
             fatalError("not found the button with the tag")
         }
@@ -226,8 +226,8 @@ open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
         itemButton.setTitleColor(titleColor, for: .normal)
     }
     
-    func keyboardWillShowNotify(notifiction: NSNotification) {
-        titles = titles.sorted { _ in
+    @objc func keyboardWillShowNotify(notifiction: NSNotification) {
+        titles = titles.sorted { _,_  in
             arc4random() < arc4random()
         }
         if !buttions.isEmpty {

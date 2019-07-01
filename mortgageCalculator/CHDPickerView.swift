@@ -33,7 +33,7 @@ class CHDPickerView: UIView,UIPickerViewDataSource,UIPickerViewDelegate {
         self.button.addTarget(self, action: #selector(self.click(sender:)), for: .touchUpInside)
     }
     
-    func click(sender:UIButton)
+    @objc func click(sender:UIButton)
     {
         if self.superview != nil
         {

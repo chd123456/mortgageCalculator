@@ -27,7 +27,7 @@ class CHDViewController: UIViewController {
         
     }
     
-    func about()
+    @objc func about()
     {
         let vc = CHDAboutViewController(nibName: "CHDAboutViewController", bundle: Bundle.main)
         vc.title = "关于"
@@ -35,7 +35,7 @@ class CHDViewController: UIViewController {
         
     }
     
-    func shareClick()
+    @objc func shareClick()
     {
         CHDShare.shared(forDescript: "一款算房贷神器", imageName: "1", setUrl: "https://itunes.apple.com/us/app/算房贷神器/id1348565908?l=zh&ls=1&mt=8", isUseAirDrop: true, currentViewController: self, comletedHandle: {
             
@@ -89,7 +89,7 @@ class CHDViewController: UIViewController {
 
     }
     
-    func segmentAction(segment:UISegmentedControl)
+    @objc func segmentAction(segment:UISegmentedControl)
     {
         if segment.selectedSegmentIndex == 0
         {
