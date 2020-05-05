@@ -17,7 +17,7 @@ public enum Style1 {
 }
 
 open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
-    open static let `default` = DigitalKeyboard(frame: CGRect(x:0, y:0, width: screenWith, height: 224), inputViewStyle: .keyboard)
+    public static let `default` = DigitalKeyboard(frame: CGRect(x:0, y:0, width: screenWith, height: 224), inputViewStyle: .keyboard)
     open var style = Style1.idcard {
         didSet {
             setDigitButton(style: style)
@@ -139,8 +139,10 @@ open class  DigitalKeyboard: UIInputView, UITextFieldDelegate {
         switch sender.tag {
         case 12:
             firstResponder()?.deleteBackward()
+            break
         case 13, 9:
             firstResponder()?.resignFirstResponder()
+            break
         default:
             firstResponder()?.insertText(text)
         }
@@ -259,7 +261,7 @@ extension DigitalKeyboard: UIInputViewAudioFeedback {
 }
 
 public extension UITextField {
-    public func idcardKeyboard(view: UIView) {
+    func idcardKeyboard(view: UIView) {
         DigitalKeyboard.default.addKeyboard(view: view, field: self)
     }
 }

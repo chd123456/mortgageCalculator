@@ -141,6 +141,38 @@
             endingLineNumber = "325"
             landmarkName = "averageCapitalMethod(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1577D29D-A2B6-4829-9CF3-6DBD8F1A9416 - 4094900d8acff300"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mortgageCalculator.CHDTableViewCell.averageCapitalMethod(__C.UIButton) -&gt; ()"
+                  moduleName = "mortgageCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
+                  offsetFromSymbolStart = "825">
+               </Location>
+               <Location
+                  uuid = "1577D29D-A2B6-4829-9CF3-6DBD8F1A9416 - 407ccd8666034ebf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in mortgageCalculator.CHDTableViewCell.averageCapitalMethod(__C.UIButton) -&gt; ()"
+                  moduleName = "mortgageCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "326"
+                  endingLineNumber = "326"
+                  offsetFromSymbolStart = "354">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -162,23 +194,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BB45A00E-203F-4E80-B0C4-0B66AA224E64"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "492"
-            endingLineNumber = "492"
-            landmarkName = "useRoundedFloatStrWith(string:precision:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DE1129D1-5C65-4B55-B1C6-224336AF1109"
+            uuid = "E02E91A2-B1D7-4D2D-AC25-C38BB6791A03"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -194,145 +210,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C88B35D4-D5DE-43A8-9507-9604286D165C"
+            uuid = "A90AD537-F6C5-461C-A1B0-4A01B838B210"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mortgageCalculator/CHDTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
-            landmarkName = "textFieldDidEndEditing(_:)"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
+            landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E40D26B9-EB7B-4AF5-B7F1-51FB649BCBBB"
+            uuid = "D6193E34-A764-41EE-AC62-BB839688A745"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mortgageCalculator/CHDTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
-            landmarkName = "awakeFromNib()"
-            landmarkType = "7">
+            startingLineNumber = "494"
+            endingLineNumber = "494"
+            landmarkName = "useRoundedFloatStrWith(string:precision:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A101C9EF-46B6-4D02-B490-F5F59F24A04C"
+            uuid = "E9187E03-1B28-4462-9698-FF2803F2EE0D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
+            filePath = "mortgageCalculator/&#x6570;&#x5b57;&#x952e;&#x76d8;/DigitalKeyboard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
-            landmarkName = "viewController()"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "tap(sender:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "00DD4BC1-D18D-4E9D-ACC4-D32F4DE92F15"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "repaymentAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0E510552-E861-4BCA-BE20-125BDD4DE721"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "repaymentAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E2AD55C0-1B2B-428D-AEF9-15FC78314F82"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "rateOfInterestAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "animationForMoneyCell(label:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F - c767f4c9a6a0b4ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mortgageCalculator.CHDTableViewCell.animationForMoneyCell(label: __C.UILabel) -&gt; ()"
-                  moduleName = "mortgageCalculator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F - 61d914af36fbfffe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in mortgageCalculator.CHDTableViewCell.animationForMoneyCell(label: __C.UILabel) -&gt; ()"
-                  moduleName = "mortgageCalculator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

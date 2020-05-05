@@ -308,7 +308,7 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
             let s = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1)
             let vc = CHDMonthlyShowController(style: .grouped)
             vc.title = "等额本息"
-
+            vc.howManyMonth = NSInteger(n);
             vc.yjhk = b
             vc.zflx = y
             vc.hkze = s
