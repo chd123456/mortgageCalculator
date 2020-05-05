@@ -147,63 +147,69 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
     
     
     @IBAction func rateOfInterestAction(_ sender: UIButton) {
-        
-        let pickerView = CHDPickerView.creatPickerView()
-        pickerView.callBack = { b in
-            
-            if infoDic["rate"] == nil
-            {
-             infoDic["rate"] = 0.049
-            }
-            if  infoDic["howManyMonth"] == nil
-            {
-                 infoDic["howManyMonth"] = 240
-            }
-            let row =  infoDic["howManyMonth"]!
-            if self.method == 0
-            {
-                if row <= 12
-                {
-                    infoDic["rate"] = 0.0435
+        totalLending.resignFirstResponder();
+        housingMoneyTextField.resignFirstResponder();
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+         let pickerView = CHDPickerView.creatPickerView()
+         pickerView.callBack = { b in
+             
+             if infoDic["rate"] == nil
+             {
+              infoDic["rate"] = 0.049
+             }
+             if  infoDic["howManyMonth"] == nil
+             {
+                  infoDic["howManyMonth"] = 240
+             }
+             let row =  infoDic["howManyMonth"]!
+             if self.method == 0
+             {
+                 if row <= 12
+                 {
+                     infoDic["rate"] = 0.0435
 
-                }else if row <= 60 && row > 0
-                {
-                    infoDic["rate"] = 0.0475
+                 }else if row <= 60 && row > 0
+                 {
+                     infoDic["rate"] = 0.0475
 
-                }else{
-                    infoDic["rate"] = 0.0490
-                  
-                }
-            }else if self.method == 1
-            {
-                if row >= 0 && row <= 60
-                {
-                    infoDic["rate"] = 0.0275
-                    
-                }else                 {
-                    infoDic["rate"] = 0.0325
-                    
-                }
-            }
-            
-            
-            infoDic["rate"] = infoDic["rate"]! * b
-            if b != 1.0
-            {
-            self.rateOfInterestButton.setTitle("基准利率 * \(b) = (\(infoDic["rate"]!*100)%)", for: .normal)
-            } else
-            {
-                self.rateOfInterestButton.setTitle("基准利率 (\(infoDic["rate"]!*100)%)", for: .normal)
-            }
-        }
-       
-        UIApplication.shared.keyWindow?.addSubview(pickerView)
-        UIView.animate(withDuration: 0.3, animations: {
-            pickerView.frame = CGRect(x: 0, y: DeviceH - 150, width: DeviceW, height: 150)
-        }) { (complete) in
-            
-        }
+                 }else{
+                     infoDic["rate"] = 0.0490
+                   
+                 }
+             }else if self.method == 1
+             {
+                 if row >= 0 && row <= 60
+                 {
+                     infoDic["rate"] = 0.0275
+                     
+                 }else                 {
+                     infoDic["rate"] = 0.0325
+                     
+                 }
+             }
+             
+             
+             infoDic["rate"] = infoDic["rate"]! * b
+             if b != 1.0
+             {
+             let bStr = useRoundedFloatStrWith(string: "\(b)", precision: 2)
+             let rateStr = useRoundedFloatStrWith(string: "\(infoDic["rate"]!*100)", precision: 2)
+             self.rateOfInterestButton.setTitle("基准利率 * \(bStr) = (\(rateStr)%)", for: .normal)
+             } else
+             {
+                 self.rateOfInterestButton.setTitle("基准利率 (\(infoDic["rate"]!*100)%)", for: .normal)
+             }
+         }
         
+         UIApplication.shared.keyWindow?.addSubview(pickerView)
+         UIView.animate(withDuration: 0.3, animations: {
+             pickerView.frame = CGRect(x: 0, y: DeviceH - 150, width: DeviceW, height: 150)
+         }) { (complete) in
+             
+         }
+         
+
+        }
     }
     @IBAction func repaymentAction(_ sender: UIButton) {
         
@@ -223,8 +229,12 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
                     infoDic["rate"] = 0.0475
                     self.rateOfInterestButton.setTitle("基准利率 (\(infoDic["rate"]!*100)%)", for: .normal)
                 }else{
-                    infoDic["rate"] = 0.0490
-                    self.rateOfInterestButton.setTitle("基准利率 (\(infoDic["rate"]!*100)%)", for: .normal)
+//                    if infoDic["rate"] != nil {
+//
+//                    }
+//                    infoDic["rate"] = 0.0490
+                 
+                    self.rateOfInterestButton.setTitle("利率 (\((useRoundedFloatStrWith(string: "\(infoDic["rate"]!*100)", precision: 2)))%)", for: .normal)
                 }
             }else if self.method == 1
             {
@@ -264,91 +274,100 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
        // infoDic["totalLending"] 贷款总额
        // infoDic["rate"] 年利率
        // infoDic["howManyMonth"] 还款月数
-        
-        if infoDic["totalLending"] == nil
-        {
-            self.animationForMoneyCell(label: self.shakeLabel2!)
-            return
-        }
-        if infoDic["rate"] == nil
-        {
-            infoDic["rate"] = 0.049
-        }
-        if infoDic["howManyMonth"] == nil
-        {
-            infoDic["howManyMonth"] = 240
-        }
-        
-        
-        //设贷款额为a，月利率为i，年利率为I，还款月数为n，每月还款额为b，还款利息总和为Y
-        //I = 12*i
-        //月均还款:b＝a×i×（1＋i）^n÷〔（1＋i）^n－1〕
-        //支付利息:Y＝n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕－a
-        //还款总额:S=n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕
+        totalLending.resignFirstResponder();
+        housingMoneyTextField.resignFirstResponder();
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+            if infoDic["totalLending"] == nil
+            {
+                self.animationForMoneyCell(label: self.shakeLabel2!)
+                return
+            }
+            if infoDic["rate"] == nil
+            {
+                infoDic["rate"] = 0.049
+            }
+            if infoDic["howManyMonth"] == nil
+            {
+                infoDic["howManyMonth"] = 240
+            }
+            
+            
+            //设贷款额为a，月利率为i，年利率为I，还款月数为n，每月还款额为b，还款利息总和为Y
+            //I = 12*i
+            //月均还款:b＝a×i×（1＋i）^n÷〔（1＋i）^n－1〕
+            //支付利息:Y＝n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕－a
+            //还款总额:S=n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕
 
-        
-        let i = infoDic["rate"]! / 12.0
-        let a = infoDic["totalLending"]!
-        let n = infoDic["howManyMonth"]!
-        
-        let b = a*i*pow(1+i, n)/(pow(1+i, n) - 1)
-        let y = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1) - a
-        let s = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1)
-        let vc = CHDMonthlyShowController(style: .grouped)
-        vc.title = "等额本息"
+            
+            let i = infoDic["rate"]! / 12.0
+            let a = infoDic["totalLending"]!
+            let n = infoDic["howManyMonth"]!
+            
+            let b = a*i*pow(1+i, n)/(pow(1+i, n) - 1)
+            let y = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1) - a
+            let s = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1)
+            let vc = CHDMonthlyShowController(style: .grouped)
+            vc.title = "等额本息"
 
-        vc.yjhk = b
-        vc.zflx = y
-        vc.hkze = s
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "贷款利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
-        
-        (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
-    
+            vc.yjhk = b
+            vc.zflx = y
+            vc.hkze = s
+            vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "贷款利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+            
+            (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
     
     @IBAction func averageCapitalMethod(_ sender: UIButton) {
-        if infoDic["totalLending"] == nil
-        {
-            self.animationForMoneyCell(label: self.shakeLabel2)
-            return
-        }
-        if infoDic["rate"] == nil
-        {
-            infoDic["rate"] = 0.049
-        }
-        if infoDic["howManyMonth"] == nil
-        {
-            infoDic["howManyMonth"] = 240
-        }
+        totalLending.resignFirstResponder();
+        housingMoneyTextField.resignFirstResponder();
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+         if infoDic["totalLending"] == nil
+         {
+             self.animationForMoneyCell(label: self.shakeLabel2)
+             return
+         }
+         if infoDic["rate"] == nil
+         {
+             infoDic["rate"] = 0.049
+         }
+         if infoDic["howManyMonth"] == nil
+         {
+             infoDic["howManyMonth"] = 240
+         }
 
-        let i = infoDic["rate"]! / 12.0  // 月利率
-        let a = infoDic["totalLending"]! // 贷款总额
-        let n = infoDic["howManyMonth"]! // 总期数
-        let b = a / infoDic["howManyMonth"]! // 月供本金
-        // 月供本金=贷款总额/总期数
-        // 总利息={贷款总额×n－月供本金×[n×(n-1)/2] }×贷款月利率
-        // 月还款=贷款总额/贷款总期数+[贷款总额－贷款总额/贷款总期数×(n-1)]×贷款月利率
+         let i = infoDic["rate"]! / 12.0  // 月利率
+         let a = infoDic["totalLending"]! // 贷款总额
+         let n = infoDic["howManyMonth"]! // 总期数
+         let b = a / infoDic["howManyMonth"]! // 月供本金
+         // 月供本金=贷款总额/总期数
+         // 总利息={贷款总额×n－月供本金×[n×(n-1)/2] }×贷款月利率
+         // 月还款=贷款总额/贷款总期数+[贷款总额－贷款总额/贷款总期数×(n-1)]×贷款月利率
 
-        let zlx = (a*n - b*(n*(n-1)/2)) * i // 总利息
-        let hkze = zlx + a                  // 还款总额
-        var array = [Double]()
-        let temp = Int(infoDic["howManyMonth"]!)
+         let zlx = (a*n - b*(n*(n-1)/2)) * i // 总利息
+         let hkze = zlx + a                  // 还款总额
+         var array = [Double]()
+         let temp = Int(infoDic["howManyMonth"]!)
 
-        for month in 1...temp
-        {
-            let temp = Double(month)
-            let yhk = b + (a - a/n*(temp-1))*i
-            array.append(yhk)
+         for month in 1...temp
+         {
+             let temp = Double(month)
+             let yhk = b + (a - a/n*(temp-1))*i
+             array.append(yhk)
+         }
+
+         
+         let vc = CHDMonthlyController(style: .grouped)
+         vc.title = "等额本金"
+         vc.hkze = hkze
+         vc.zflx = zlx
+         vc.dkze = infoDic["totalLending"]!
+         vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "利率：\(  (useRoundedFloatStrWith(string: "\(infoDic["rate"]!*100)", precision: 2)))%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
+         vc.array = array
+         (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
+
         }
-
-        
-        let vc = CHDMonthlyController(style: .grouped)
-        vc.title = "等额本金"
-        vc.hkze = hkze
-        vc.zflx = zlx
-        vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "  利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
-        vc.array = array
-        (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -10,6 +10,7 @@ import UIKit
 
 class CHDMonthlyController: UITableViewController {
     var hkze:Double!
+    var dkze:Double!
     var yjhk:Double!
     var zflx:Double!
     var infoString:String!
@@ -63,8 +64,13 @@ class CHDMonthlyController: UITableViewController {
             return cell
         }else
         {
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-            cell.textLabel?.text = "第\(indexPath.row + 1)期月供为：" + useRoundedFloatStrWith(string: "\(array[indexPath.row] * 10000)", precision: 2) + "元"
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+            let ygje = array[indexPath.row] * 10000
+            cell.textLabel?.text = "第\(indexPath.row + 1)期月供为：" + useRoundedFloatStrWith(string: "\(ygje)", precision: 2) + "元"
+            let ygbj = dkze * 10000 / Double(array.count);
+            let yglx = ygje - ygbj;
+            cell.detailTextLabel?.text = "包含本金：" + useRoundedFloatStrWith(string: "\(ygbj)", precision: 2) + "元" +  "  与利息：" + useRoundedFloatStrWith(string: "\(yglx)", precision: 2) + "元"
+            cell.detailTextLabel?.textColor = UIColor.lightGray;
             return cell
         }
         
