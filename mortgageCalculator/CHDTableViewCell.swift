@@ -297,7 +297,13 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
             //月均还款:b＝a×i×（1＋i）^n÷〔（1＋i）^n－1〕
             //支付利息:Y＝n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕－a
             //还款总额:S=n×a×i×（1＋i）^n÷〔（1＋i）^n－1〕
+            //每月支付利息＝剩余本金 X 贷款月利率；
 
+            
+            //1 = a * i 每月利息
+            //2 = b - (a*i)
+                
+            //每月归还本金＝每月还本付息额-每月支付利息。
             
             let i = infoDic["rate"]! / 12.0
             let a = infoDic["totalLending"]!
@@ -307,18 +313,53 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
             let y = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1) - a
             let s = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1)
             let vc = CHDMonthlyShowController(style: .grouped)
+            
+            //            j1 a*i         b1 = b - j1
+            //            j2 = (a-b1)*i  b2 = b-j2
+            //            j3 = (a-b2)*i  b3 = b-j3
+            //            j4 = (a-b3)*i  b4 = b-j4
+            var arrar = [Double]()
+            
+            for index in 1...Int(n){
+                arrar.append(self.getMonthLX(index, a: a * 10000, i: i, b: b * 10000))
+            }
+            
             vc.title = "等额本息"
             vc.howManyMonth = NSInteger(n);
             vc.yjhk = b
             vc.zflx = y
             vc.hkze = s
+            vc.array = arrar;
             vc.infoString = "贷款总额：\(useRoundedFloatStrWith(string: "\(infoDic["totalLending"]!)", precision: 2))万元" + "\n" + "贷款利率：\(infoDic["rate"]!*100)%" + "\n" + "还款月数：\(Int(infoDic["howManyMonth"]!))个月"
             
             (self.viewController() as!CHDViewController).navigationController?.pushViewController(vc, animated: true)
 
         }
     }
-    
+    // n 月份 a 贷款总额 i 月利率 b每月还款总额
+    func getMonthLX(_ n: Int, a:Double ,i:Double,b:Double,sumJ:Double)->Double{
+//        let jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
+        //等额本息还款
+        //n月份
+        //a贷款总额
+        //i月利率
+        //b每月还款总额
+//       // jn为每月还款利息
+        let j1 = (a - Double(0) * b) * i
+        let j2 = (a - Double(1) * b + j1) * i
+        let j3 = (a - Double(2) * b + j1 + j2) * i
+        let j4 = (a - Double(3) * b + j1 + j2 + j3) * i
+        let j5 = (a - Double(4) * b + j1 + j2 + j3 + j4) * i
+        let j6 = (a - Double(5) * b + j1 + j2 + j3 + j4 + j5) * i
+        let j7 = (a - Double(6) * b + j1 + j2 + j3 + j4 + j5 + j6) * i
+        let j8 = (a - Double(7) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7) * i
+        let j9 = (a - Double(8) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7 + j8) * i
+        
+//
+         jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
+        
+    }
+            
     @IBAction func averageCapitalMethod(_ sender: UIButton) {
         totalLending.resignFirstResponder();
         housingMoneyTextField.resignFirstResponder();

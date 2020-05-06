@@ -13,6 +13,7 @@ class CHDMonthlyShowController: UITableViewController {
     var yjhk:Double!
     var zflx:Double!
     var yjlx:Double!
+    var array = [Double]()
     var howManyMonth:NSInteger = 0;
     
     var infoString:String!
@@ -60,7 +61,14 @@ class CHDMonthlyShowController: UITableViewController {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             
             cell.textLabel?.text = "第\(indexPath.row + 1)期月供为：" + useRoundedFloatStrWith(string: "\(yjhk! * 10000)", precision: 2) + "元"
-            let yglx = zflx * 10000 / ((Double)(howManyMonth));
+            
+            //每月支付利息＝剩余本金 X 贷款月利率；
+//            j1 a*i         b1 = b - j1
+//            j2 = (a-b1)*i  b2 = b-j2
+//            j3 = (a-b2)*i  b3 = b-j3
+//            j4 = (a-b3)*i  b4 = b-j4
+            
+            let yglx = array[indexPath.row];
             let ygbj = yjhk * 10000 - yglx;
             cell.detailTextLabel?.text = "包含本金：" + useRoundedFloatStrWith(string: "\(ygbj)", precision: 2) + "元" +  "  与利息：" + useRoundedFloatStrWith(string: "\(yglx)", precision: 2) + "元"
             cell.detailTextLabel?.textColor = UIColor.lightGray;
