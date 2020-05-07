@@ -145,8 +145,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "9B4F7661-19C5-4209-BF51-D5AB88C5A557-2.png",
       "scale" : "1x"
     },
     {
@@ -233,8 +234,9 @@
       "subtype" : "44mm"
     },
     {
-      "idiom" : "watch-marketing",
       "size" : "1024x1024",
+      "idiom" : "watch-marketing",
+      "filename" : "9B4F7661-19C5-4209-BF51-D5AB88C5A557-1.png",
       "scale" : "1x"
     },
     {
@@ -289,8 +291,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "9B4F7661-19C5-4209-BF51-D5AB88C5A557.png",
       "scale" : "2x"
     }
   ],

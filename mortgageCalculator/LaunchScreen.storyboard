@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="oKT-P4-zsu">
-                                <rect key="frame" x="0.0" y="80" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="183.5" width="375" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="20Q-46-GpX"/>
                                 </constraints>
@@ -31,7 +29,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oKT-P4-zsu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3wb-hl-2GZ"/>
-                            <constraint firstItem="oKT-P4-zsu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="80" id="cgo-f7-7vv"/>
+                            <constraint firstItem="oKT-P4-zsu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nxW-T3-Y2n"/>
                             <constraint firstAttribute="trailing" secondItem="oKT-P4-zsu" secondAttribute="trailing" id="tGp-oX-heo"/>
                         </constraints>
                     </view>

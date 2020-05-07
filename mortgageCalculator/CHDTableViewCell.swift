@@ -313,16 +313,13 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
             let y = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1) - a
             let s = n*a*i*pow(1+i, n)/(pow(1+i, n) - 1)
             let vc = CHDMonthlyShowController(style: .grouped)
-            
-            //            j1 a*i         b1 = b - j1
-            //            j2 = (a-b1)*i  b2 = b-j2
-            //            j3 = (a-b2)*i  b3 = b-j3
-            //            j4 = (a-b3)*i  b4 = b-j4
+       
+       
             var arrar = [Double]()
             
-            for index in 1...Int(n){
-                arrar.append(self.getMonthLX(index, a: a * 10000, i: i, b: b * 10000))
-            }
+//            for index in 1...Int(n){
+//                arrar.append(self.getMonthLX(index, a: a * 10000, i: i, b: b * 10000))
+//            }
             
             vc.title = "等额本息"
             vc.howManyMonth = NSInteger(n);
@@ -337,28 +334,28 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
         }
     }
     // n 月份 a 贷款总额 i 月利率 b每月还款总额
-    func getMonthLX(_ n: Int, a:Double ,i:Double,b:Double,sumJ:Double)->Double{
-//        let jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
-        //等额本息还款
-        //n月份
-        //a贷款总额
-        //i月利率
-        //b每月还款总额
-//       // jn为每月还款利息
-        let j1 = (a - Double(0) * b) * i
-        let j2 = (a - Double(1) * b + j1) * i
-        let j3 = (a - Double(2) * b + j1 + j2) * i
-        let j4 = (a - Double(3) * b + j1 + j2 + j3) * i
-        let j5 = (a - Double(4) * b + j1 + j2 + j3 + j4) * i
-        let j6 = (a - Double(5) * b + j1 + j2 + j3 + j4 + j5) * i
-        let j7 = (a - Double(6) * b + j1 + j2 + j3 + j4 + j5 + j6) * i
-        let j8 = (a - Double(7) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7) * i
-        let j9 = (a - Double(8) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7 + j8) * i
-        
-//
-         jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
-        
-    }
+//    func getMonthLX(_ n: Int, a:Double ,i:Double,b:Double)->Double{
+////        let jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
+//        //等额本息还款
+//        //n月份
+//        //a贷款总额
+//        //i月利率
+//        //b每月还款总额
+////       // jn为每月还款利息
+////        let j1 = (a - Double(0) * b) * i
+////        let j2 = (a - Double(1) * b + j1) * i
+////        let j3 = (a - Double(2) * b + j1 + j2) * i
+////        let j4 = (a - Double(3) * b + j1 + j2 + j3) * i
+////        let j5 = (a - Double(4) * b + j1 + j2 + j3 + j4) * i
+////        let j6 = (a - Double(5) * b + j1 + j2 + j3 + j4 + j5) * i
+////        let j7 = (a - Double(6) * b + j1 + j2 + j3 + j4 + j5 + j6) * i
+////        let j8 = (a - Double(7) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7) * i
+////        let j9 = (a - Double(8) * b + j1 + j2 + j3 + j4 + j5 + j6 + j7 + j8) * i
+////        return 0;
+//////
+////         jn = (a - Double( n - 1 ) * b + j1 + ... + j(n-1) ) * i
+//        
+//    }
             
     @IBAction func averageCapitalMethod(_ sender: UIButton) {
         totalLending.resignFirstResponder();
