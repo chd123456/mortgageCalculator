@@ -229,11 +229,10 @@ class CHDTableViewCell: UITableViewCell,UITextFieldDelegate {
                     infoDic["rate"] = 0.0475
                     self.rateOfInterestButton.setTitle("基准利率 (\(infoDic["rate"]!*100)%)", for: .normal)
                 }else{
-//                    if infoDic["rate"] != nil {
-//
-//                    }
-//                    infoDic["rate"] = 0.0490
-                 
+                    if infoDic["rate"] == nil {
+                        infoDic["rate"] = 0.0490
+                    }
+                   
                     self.rateOfInterestButton.setTitle("利率 (\((useRoundedFloatStrWith(string: "\(infoDic["rate"]!*100)", precision: 2)))%)", for: .normal)
                 }
             }else if self.method == 1
