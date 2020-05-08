@@ -25,6 +25,43 @@ class CHDViewController: UIViewController {
         let leftItem = UIBarButtonItem(title: "分享", style: .done, target: self, action: #selector(self.shareClick))
         self.navigationItem.leftBarButtonItem = leftItem
         
+        
+         if self.segment != nil
+         {
+             self.segment?.removeFromSuperview()
+         }
+         if self.tableView != nil
+         {
+             self.tableView?.removeFromSuperview()
+         }
+         let segment = UISegmentedControl(items: ["商业贷款","公积金贷款"])//,"组合贷款"
+         self.segment = segment
+         segment.addTarget(self, action: #selector(self.segmentAction(segment:)), for: .valueChanged)
+         segment.selectedSegmentIndex = 0
+         segment.tintColor = UIColor(red: 72/255.0, green: 192/255.0, blue: 1.0, alpha: 1.0)
+         segment.center = CGPoint(x: self.view.center.x, y: 20)
+         self.view.addSubview(segment)
+         
+         
+         let tableView = UITableView(frame: self.view.frame, style: .grouped)
+         tableView.frame = CGRect(x: 0, y: 39, width: self.view.frame.size.width, height: 3660)
+         self.tableView = tableView
+         self.tableViewframe = tableView.frame
+         tableView.backgroundColor = UIColor.white
+         tableView.separatorStyle = .none
+         tableView.dataSource = self
+         tableView.delegate = self
+         if UIApplication.shared.statusBarOrientation == .portrait
+         {
+             tableView.isScrollEnabled = true
+         }else
+         {
+             tableView.isScrollEnabled = true
+
+         }
+        // tableView.backgroundColor = .green
+         self.view.addSubview(tableView)
+        
     }
     
     @objc func about()
@@ -49,45 +86,11 @@ class CHDViewController: UIViewController {
         }        
     }
     
-    override func viewWillLayoutSubviews() {
-        if self.segment != nil
-        {
-            self.segment?.removeFromSuperview()
-        }
-        if self.tableView != nil
-        {
-            self.tableView?.removeFromSuperview()
-        }
-        let segment = UISegmentedControl(items: ["商业贷款","公积金贷款"])//,"组合贷款" 
-        self.segment = segment
-        segment.addTarget(self, action: #selector(self.segmentAction(segment:)), for: .valueChanged)
-        segment.selectedSegmentIndex = 0
-        segment.tintColor = UIColor(red: 72/255.0, green: 192/255.0, blue: 1.0, alpha: 1.0)
-        segment.center = CGPoint(x: self.view.center.x, y: 20)
-        self.view.addSubview(segment)
-        
-        
-        let tableView = UITableView(frame: self.view.frame, style: .grouped)
-        tableView.frame = CGRect(x: 0, y: 39, width: self.view.frame.size.width, height: 3660)
-        self.tableView = tableView
-        self.tableViewframe = tableView.frame
-        tableView.backgroundColor = UIColor.white
-        tableView.separatorStyle = .none
-        tableView.dataSource = self
-        tableView.delegate = self
-        if UIApplication.shared.statusBarOrientation == .portrait
-        {
-            tableView.isScrollEnabled = true
-        }else
-        {
-            tableView.isScrollEnabled = true
-
-        }
-       // tableView.backgroundColor = .green
-        self.view.addSubview(tableView)
-
-
-    }
+//    override func viewWillLayoutSubviews() {
+//
+//
+//
+//    }
     
     @objc func segmentAction(segment:UISegmentedControl)
     {

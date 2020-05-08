@@ -95,53 +95,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mortgageCalculator/CHDTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "animationForMoneyCell(label:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F - c767f4c9a6a0b4ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mortgageCalculator.CHDTableViewCell.animationForMoneyCell(label: __C.UILabel) -&gt; ()"
-                  moduleName = "mortgageCalculator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "5DE7DD09-DCC0-4552-BD24-68BF5B48272F - 61d914af36fbfffe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in mortgageCalculator.CHDTableViewCell.animationForMoneyCell(label: __C.UILabel) -&gt; ()"
-                  moduleName = "mortgageCalculator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hida/Desktop/mortgageCalculator/mortgageCalculator/CHDTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
